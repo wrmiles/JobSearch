@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobSearchModelStoreContainer" CdmEntityContainer="JobSearchEntities1">
+    <EntitySetMapping Name="Industry">
+      <EntityTypeMapping TypeName="JobSearchModel.Industry">
+        <MappingFragment StoreEntitySet="Industry">
+          <ScalarProperty Name="IndustryName" ColumnName="IndustryName" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="JobSearchModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DrivingDirections" ColumnName="DrivingDirections" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CompanyWebsiteUrl" ColumnName="CompanyWebsiteUrl" />
+          <ScalarProperty Name="CompanyContact1Email" ColumnName="CompanyContact1Email" />
+          <ScalarProperty Name="CompanyContact1MobilePhone" ColumnName="CompanyContact1MobilePhone" />
+          <ScalarProperty Name="CompanyContact1OfficePhone" ColumnName="CompanyContact1OfficePhone" />
+          <ScalarProperty Name="CompanyContact1Title" ColumnName="CompanyContact1Title" />
+          <ScalarProperty Name="CompanyContact1Name" ColumnName="CompanyContact1Name" />
+          <ScalarProperty Name="CompanyZip" ColumnName="CompanyZip" />
+          <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+          <ScalarProperty Name="CompanyCity" ColumnName="CompanyCity" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecruiterCompany">
+      <EntityTypeMapping TypeName="JobSearchModel.RecruiterCompany">
+        <MappingFragment StoreEntitySet="RecruiterCompany">
+          <ScalarProperty Name="RecruiterCompanyID" ColumnName="RecruiterCompanyID" />
+          <ScalarProperty Name="ClientCompanyID" ColumnName="ClientCompanyID" />
+          <ScalarProperty Name="joinID" ColumnName="joinID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewLog">
+      <EntityTypeMapping TypeName="JobSearchModel.InterviewLog">
+        <MappingFragment StoreEntitySet="InterviewLog">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InterviewTime" ColumnName="InterviewTime" />
+          <ScalarProperty Name="InterviewDate" ColumnName="InterviewDate" />
+          <ScalarProperty Name="InterviewStatusId" ColumnName="InterviewStatusId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="RecruiterCompanyId" ColumnName="RecruiterCompanyId" />
+          <ScalarProperty Name="ClientCompanyId" ColumnName="ClientCompanyId" />
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewStatus">
+      <EntityTypeMapping TypeName="JobSearchModel.InterviewStatus">
+        <MappingFragment StoreEntitySet="InterviewStatus">
+          <ScalarProperty Name="InterviewStatusDescription" ColumnName="InterviewStatusDescription" />
+          <ScalarProperty Name="InterviewStatusId" ColumnName="InterviewStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobStatus">
+      <EntityTypeMapping TypeName="JobSearchModel.JobStatus">
+        <MappingFragment StoreEntitySet="JobStatus">
+          <ScalarProperty Name="JobStatusDescription" ColumnName="JobStatusDescription" />
+          <ScalarProperty Name="JobStatusId" ColumnName="JobStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job">
+      <EntityTypeMapping TypeName="JobSearchModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JobStatusId" ColumnName="JobStatusId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,7 @@
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\bin\JobSearch.MVCWeb.dll
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\bin\JobSearch.MVCWeb.pdb
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\bin\EntityFramework.dll
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\bin\EntityFramework.xml
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\obj\Debug\JobSearch.MVCWeb.dll
+C:\Users\Bill\Documents\Visual Studio 2010\Projects\MVC\JobSearch.Sol\JobSearch.MVCWeb\obj\Debug\JobSearch.MVCWeb.pdb

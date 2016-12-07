@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobSearchModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="JobSearchModelStoreContainer">
+    <EntitySet Name="Company" EntityType="JobSearchModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Industry" EntityType="JobSearchModel.Store.Industry" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IndustryId" Type="int" Nullable="false" />
+    <Property Name="CompanyAddress" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CompanyCity" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyState" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="CompanyZip" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyContact1Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CompanyContact1Title" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyContact1OfficePhone" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="CompanyContact1MobilePhone" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="CompanyContact1Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CompanyWebsiteUrl" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Notes" Type="varchar" MaxLength="5000" />
+    <Property Name="DrivingDirections" Type="varchar" MaxLength="2000" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Industry">
+    <Key>
+      <PropertyRef Name="IndustryId" />
+    </Key>
+    <Property Name="IndustryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IndustryName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

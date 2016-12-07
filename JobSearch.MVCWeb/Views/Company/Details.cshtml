@@ -1,0 +1,242 @@
+﻿@using JobSearch.MVCWeb.Classes
+@model JobSearch.MVCWeb.Models.Company
+
+@{
+    ViewBag.Title = "Company Details";
+}
+
+<fieldset>
+    <legend>Company Details</legend>
+
+    <table width="99%">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyName)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyName)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.IndustryId, "Industry")
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DropDownList("IndustryId", String.Empty)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyAddress)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyAddress)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyCity)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyCity)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyState)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DropDownList("CompanyState", USStates.StateSelectList)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyZip)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyZip)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyWebsiteUrl)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyWebsiteUrl)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.DrivingDirections)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.TextAreaFor(model => model.DrivingDirections, new { @rows = 8, @cols = 120 })
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                    
+            </td>
+            <td>
+                <table>
+                        
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyContact1Name)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyContact1Name)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyContact1Title)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyContact1Title)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyContact1OfficePhone)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyContact1OfficePhone)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyContact1MobilePhone)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CompanyContact1MobilePhone)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.CompanyContact1Email)
+                            </div>
+                               
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @{
+                                    string emailAddress = Model.CompanyContact1Email;
+                                } 
+ 
+                                <a href = "mailto:@emailAddress">@Model.CompanyContact1Email</a> 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.Notes)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.TextAreaFor(model => model.Notes, new { @rows = 8, @cols = 120 })
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                @Html.LabelFor(model => model.IsActive)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.IsActive)
+                                @Html.ValidationMessageFor(model => model.IsActive)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                    
+            </td>
+        </tr>
+    </table>
+    
+   @if(Model.IndustryId == 1)
+   {
+        <div>
+            @Html.ActionLink("Associated Companies", "ClientIndex", "RecruiterCompany", new { recruiterId = Model.CompanyId }, null)
+        </div>
+   }
+   else
+   {
+        <div>
+            @Html.ActionLink("Associated Recruiters", "RecruiterIndex", "RecruiterCompany", new { clientCompanyId = Model.CompanyId }, null)
+        </div>
+   }
+        
+    
+        
+   
+    
+    
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<script type="text/javascript">
+    $('#IndustryId').attr("disabled", "true");
+    $('#CompanyState').attr("disabled", "true");
+    $('#DrivingDirections').attr("disabled", "true");
+    $('#Notes').attr("disabled", "true");
+</script>

@@ -1,0 +1,38 @@
+﻿@model JobSearch.MVCWeb.Models.Job
+
+@{
+    ViewBag.Title = "Delete Job";
+}
+
+<h2>Delete Job</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Job</legend>
+
+    <div class="display-label">JobTitle</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobTitle)
+    </div>
+
+    <div class="display-label">JobDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobDescription)
+    </div>
+
+    <div class="display-label">Company</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Company.CompanyName)
+    </div>
+
+    <div class="display-label">JobStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobStatus.JobStatusDescription)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

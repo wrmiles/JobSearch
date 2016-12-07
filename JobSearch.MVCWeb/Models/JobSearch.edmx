@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JobSearchModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="JobSearchModelStoreContainer">
+          <EntitySet Name="Company" EntityType="JobSearchModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Industry" EntityType="JobSearchModel.Store.Industry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InterviewLog" EntityType="JobSearchModel.Store.InterviewLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InterviewStatus" EntityType="JobSearchModel.Store.InterviewStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Job" EntityType="JobSearchModel.Store.Job" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JobStatus" EntityType="JobSearchModel.Store.JobStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecruiterCompany" EntityType="JobSearchModel.Store.RecruiterCompany" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Company_Industry" Association="JobSearchModel.Store.FK_Company_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InterviewLog_InterviewStatus" Association="JobSearchModel.Store.FK_InterviewLog_InterviewStatus">
+            <End Role="InterviewStatus" EntitySet="InterviewStatus" />
+            <End Role="InterviewLog" EntitySet="InterviewLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InterviewLog_Job" Association="JobSearchModel.Store.FK_InterviewLog_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="InterviewLog" EntitySet="InterviewLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_Company" Association="JobSearchModel.Store.FK_Job_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_JobStatus" Association="JobSearchModel.Store.FK_Job_JobStatus">
+            <End Role="JobStatus" EntitySet="JobStatus" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IndustryId" Type="int" Nullable="false" />
+          <Property Name="CompanyAddress" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CompanyCity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CompanyState" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="CompanyZip" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CompanyContact1Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CompanyContact1Title" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CompanyContact1OfficePhone" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="CompanyContact1MobilePhone" Type="varchar" MaxLength="16" />
+          <Property Name="CompanyContact1Email" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CompanyWebsiteUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Notes" Type="varchar" MaxLength="5000" />
+          <Property Name="DrivingDirections" Type="varchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="IndustryId" />
+          </Key>
+          <Property Name="IndustryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IndustryName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InterviewLog">
+          <Key>
+            <PropertyRef Name="InterviewId" />
+          </Key>
+          <Property Name="InterviewId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClientCompanyId" Type="bigint" Nullable="false" />
+          <Property Name="RecruiterCompanyId" Type="bigint" Nullable="false" />
+          <Property Name="JobId" Type="int" Nullable="false" />
+          <Property Name="InterviewStatusId" Type="tinyint" Nullable="false" />
+          <Property Name="InterviewDate" Type="datetime" Nullable="false" />
+          <Property Name="InterviewTime" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="InterviewStatus">
+          <Key>
+            <PropertyRef Name="InterviewStatusId" />
+          </Key>
+          <Property Name="InterviewStatusId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InterviewStatusDescription" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="JobDescription" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="CompanyId" Type="bigint" Nullable="false" />
+          <Property Name="JobStatusId" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobStatus">
+          <Key>
+            <PropertyRef Name="JobStatusId" />
+          </Key>
+          <Property Name="JobStatusId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JobStatusDescription" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RecruiterCompany">
+          <Key>
+            <PropertyRef Name="joinID" />
+          </Key>
+          <Property Name="joinID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClientCompanyID" Type="bigint" Nullable="false" />
+          <Property Name="RecruiterCompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Company_Industry">
+          <End Role="Industry" Type="JobSearchModel.Store.Industry" Multiplicity="1" />
+          <End Role="Company" Type="JobSearchModel.Store.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="IndustryId" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InterviewLog_InterviewStatus">
+          <End Role="InterviewStatus" Type="JobSearchModel.Store.InterviewStatus" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="InterviewLog" Type="JobSearchModel.Store.InterviewLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InterviewStatus">
+              <PropertyRef Name="InterviewStatusId" />
+            </Principal>
+            <Dependent Role="InterviewLog">
+              <PropertyRef Name="InterviewStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InterviewLog_Job">
+          <End Role="Job" Type="JobSearchModel.Store.Job" Multiplicity="1" />
+          <End Role="InterviewLog" Type="JobSearchModel.Store.InterviewLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="InterviewLog">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_Company">
+          <End Role="Company" Type="JobSearchModel.Store.Company" Multiplicity="1" />
+          <End Role="Job" Type="JobSearchModel.Store.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_JobStatus">
+          <End Role="JobStatus" Type="JobSearchModel.Store.JobStatus" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Job" Type="JobSearchModel.Store.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobStatus">
+              <PropertyRef Name="JobStatusId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="JobStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JobSearchModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="JobSearchEntities1" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="Industry" EntityType="JobSearchModel.Industry" />
+          <EntitySet Name="Company" EntityType="JobSearchModel.Company" />
+          <AssociationSet Name="FK_Company_Industry" Association="JobSearchModel.FK_Company_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <EntitySet Name="RecruiterCompany" EntityType="JobSearchModel.RecruiterCompany" />
+          <EntitySet Name="InterviewLog" EntityType="JobSearchModel.InterviewLog" />
+          <EntitySet Name="InterviewStatus" EntityType="JobSearchModel.InterviewStatus" />
+          <EntitySet Name="JobStatus" EntityType="JobSearchModel.JobStatus" />
+          <AssociationSet Name="FK_InterviewLog_InterviewStatus" Association="JobSearchModel.FK_InterviewLog_InterviewStatus">
+            <End Role="InterviewStatus" EntitySet="InterviewStatus" />
+            <End Role="InterviewLog" EntitySet="InterviewLog" />
+          </AssociationSet>
+          <EntitySet Name="Job" EntityType="JobSearchModel.Job" />
+          <AssociationSet Name="FK_Job_Company" Association="JobSearchModel.FK_Job_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InterviewLog_Job" Association="JobSearchModel.FK_InterviewLog_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="InterviewLog" EntitySet="InterviewLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_JobStatus" Association="JobSearchModel.FK_Job_JobStatus">
+            <End Role="JobStatus" EntitySet="JobStatus" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="IndustryId" />
+          </Key>
+          <Property Type="Int32" Name="IndustryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="IndustryName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Company" Relationship="JobSearchModel.FK_Company_Industry" FromRole="Industry" ToRole="Company" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Type="Int64" Name="CompanyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IndustryId" Nullable="false" />
+          <Property Type="String" Name="CompanyAddress" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyCity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyState" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyZip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyContact1Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyContact1Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyContact1OfficePhone" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyContact1MobilePhone" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyContact1Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyWebsiteUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DrivingDirections" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="Industry" Relationship="JobSearchModel.FK_Company_Industry" FromRole="Company" ToRole="Industry" />
+          <NavigationProperty Name="Job" Relationship="JobSearchModel.FK_Job_Company" FromRole="Company" ToRole="Job" />
+        </EntityType>
+        <Association Name="FK_Company_Industry">
+          <End Type="JobSearchModel.Industry" Role="Industry" Multiplicity="1" />
+          <End Type="JobSearchModel.Company" Role="Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="IndustryId" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RecruiterCompany">
+          <Key>
+            <PropertyRef Name="joinID" />
+          </Key>
+          <Property Type="Int32" Name="joinID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ClientCompanyID" Nullable="false" />
+          <Property Type="Int64" Name="RecruiterCompanyID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InterviewLog">
+          <Key>
+            <PropertyRef Name="InterviewId" />
+          </Key>
+          <Property Type="Int32" Name="InterviewId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ClientCompanyId" Nullable="false" />
+          <Property Type="Int64" Name="RecruiterCompanyId" Nullable="false" />
+          <Property Type="Int32" Name="JobId" Nullable="false" />
+          <Property Type="Byte" Name="InterviewStatusId" Nullable="false" />
+          <Property Type="DateTime" Name="InterviewDate" Nullable="false" />
+          <Property Type="String" Name="InterviewTime" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InterviewStatus" Relationship="JobSearchModel.FK_InterviewLog_InterviewStatus" FromRole="InterviewLog" ToRole="InterviewStatus" />
+          <NavigationProperty Name="Job" Relationship="JobSearchModel.FK_InterviewLog_Job" FromRole="InterviewLog" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="InterviewStatus">
+          <Key>
+            <PropertyRef Name="InterviewStatusId" />
+          </Key>
+          <Property Type="Byte" Name="InterviewStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InterviewStatusDescription" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InterviewLog" Relationship="JobSearchModel.FK_InterviewLog_InterviewStatus" FromRole="InterviewStatus" ToRole="InterviewLog" />
+        </EntityType>
+        <EntityType Name="JobStatus">
+          <Key>
+            <PropertyRef Name="JobStatusId" />
+          </Key>
+          <Property Type="Byte" Name="JobStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="JobStatusDescription" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Job" Relationship="JobSearchModel.FK_Job_JobStatus" FromRole="JobStatus" ToRole="Job" />
+        </EntityType>
+        <Association Name="FK_InterviewLog_InterviewStatus">
+          <End Type="JobSearchModel.InterviewStatus" Role="InterviewStatus" Multiplicity="1" />
+          <End Type="JobSearchModel.InterviewLog" Role="InterviewLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InterviewStatus">
+              <PropertyRef Name="InterviewStatusId" />
+            </Principal>
+            <Dependent Role="InterviewLog">
+              <PropertyRef Name="InterviewStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Type="Int32" Name="JobId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="JobDescription" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CompanyId" Nullable="false" />
+          <Property Type="Byte" Name="JobStatusId" Nullable="false" />
+          <NavigationProperty Name="Company" Relationship="JobSearchModel.FK_Job_Company" FromRole="Job" ToRole="Company" />
+          <NavigationProperty Name="InterviewLog" Relationship="JobSearchModel.FK_InterviewLog_Job" FromRole="Job" ToRole="InterviewLog" />
+          <NavigationProperty Name="JobStatus" Relationship="JobSearchModel.FK_Job_JobStatus" FromRole="Job" ToRole="JobStatus" />
+        </EntityType>
+        <Association Name="FK_Job_Company">
+          <End Type="JobSearchModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="JobSearchModel.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InterviewLog_Job">
+          <End Type="JobSearchModel.Job" Role="Job" Multiplicity="1" />
+          <End Type="JobSearchModel.InterviewLog" Role="InterviewLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="InterviewLog">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_JobStatus">
+          <End Type="JobSearchModel.JobStatus" Role="JobStatus" Multiplicity="1" />
+          <End Type="JobSearchModel.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobStatus">
+              <PropertyRef Name="JobStatusId" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="JobStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JobSearchModelStoreContainer" CdmEntityContainer="JobSearchEntities1">
+          <EntitySetMapping Name="Industry">
+            <EntityTypeMapping TypeName="JobSearchModel.Industry">
+              <MappingFragment StoreEntitySet="Industry">
+                <ScalarProperty Name="IndustryName" ColumnName="IndustryName" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="JobSearchModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DrivingDirections" ColumnName="DrivingDirections" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CompanyWebsiteUrl" ColumnName="CompanyWebsiteUrl" />
+                <ScalarProperty Name="CompanyContact1Email" ColumnName="CompanyContact1Email" />
+                <ScalarProperty Name="CompanyContact1MobilePhone" ColumnName="CompanyContact1MobilePhone" />
+                <ScalarProperty Name="CompanyContact1OfficePhone" ColumnName="CompanyContact1OfficePhone" />
+                <ScalarProperty Name="CompanyContact1Title" ColumnName="CompanyContact1Title" />
+                <ScalarProperty Name="CompanyContact1Name" ColumnName="CompanyContact1Name" />
+                <ScalarProperty Name="CompanyZip" ColumnName="CompanyZip" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="CompanyCity" ColumnName="CompanyCity" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecruiterCompany">
+            <EntityTypeMapping TypeName="JobSearchModel.RecruiterCompany">
+              <MappingFragment StoreEntitySet="RecruiterCompany">
+                <ScalarProperty Name="RecruiterCompanyID" ColumnName="RecruiterCompanyID" />
+                <ScalarProperty Name="ClientCompanyID" ColumnName="ClientCompanyID" />
+                <ScalarProperty Name="joinID" ColumnName="joinID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InterviewLog">
+            <EntityTypeMapping TypeName="JobSearchModel.InterviewLog">
+              <MappingFragment StoreEntitySet="InterviewLog">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="InterviewTime" ColumnName="InterviewTime" />
+                <ScalarProperty Name="InterviewDate" ColumnName="InterviewDate" />
+                <ScalarProperty Name="InterviewStatusId" ColumnName="InterviewStatusId" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="RecruiterCompanyId" ColumnName="RecruiterCompanyId" />
+                <ScalarProperty Name="ClientCompanyId" ColumnName="ClientCompanyId" />
+                <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InterviewStatus">
+            <EntityTypeMapping TypeName="JobSearchModel.InterviewStatus">
+              <MappingFragment StoreEntitySet="InterviewStatus">
+                <ScalarProperty Name="InterviewStatusDescription" ColumnName="InterviewStatusDescription" />
+                <ScalarProperty Name="InterviewStatusId" ColumnName="InterviewStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobStatus">
+            <EntityTypeMapping TypeName="JobSearchModel.JobStatus">
+              <MappingFragment StoreEntitySet="JobStatus">
+                <ScalarProperty Name="JobStatusDescription" ColumnName="JobStatusDescription" />
+                <ScalarProperty Name="JobStatusId" ColumnName="JobStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job">
+            <EntityTypeMapping TypeName="JobSearchModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobStatusId" ColumnName="JobStatusId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="JobSearch">
+        <EntityTypeShape EntityType="JobSearchModel.Industry" Width="1.5" PointX="0.75" PointY="2.375" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="JobSearchModel.Company" Width="1.5" PointX="3" PointY="1" Height="4.2879036458333317" />
+        <AssociationConnector Association="JobSearchModel.FK_Company_Industry" >
+          <ConnectorPoint PointX="2.25" PointY="3.172841796875" />
+          <ConnectorPoint PointX="3" PointY="3.172841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="JobSearchModel.RecruiterCompany" Width="2.5" PointX="5.375" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="JobSearchModel.InterviewLog" Width="1.5" PointX="9.875" PointY="4" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="JobSearchModel.InterviewStatus" Width="1.5" PointX="7.625" PointY="7.625" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="JobSearchModel.JobStatus" Width="1.5" PointX="5.375" PointY="4.625" Height="1.5956835937499996" />
+        <AssociationConnector Association="JobSearchModel.FK_InterviewLog_InterviewStatus" >
+          <ConnectorPoint PointX="9.125" PointY="8.422841796875" />
+          <ConnectorPoint PointX="10.625" PointY="8.422841796875" />
+          <ConnectorPoint PointX="10.625" PointY="6.9417936197916656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="JobSearchModel.Job" Width="1.5" PointX="7.625" PointY="3.375" Height="2.5571907552083317" />
+        <AssociationConnector Association="JobSearchModel.FK_Job_Company" >
+          <ConnectorPoint PointX="4.5" PointY="3.96875" />
+          <ConnectorPoint PointX="7.625" PointY="3.96875" />
+        </AssociationConnector>
+        <AssociationConnector Association="JobSearchModel.FK_InterviewLog_Job" >
+          <ConnectorPoint PointX="9.125" PointY="4.9660953776041659" />
+          <ConnectorPoint PointX="9.875" PointY="4.9660953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="JobSearchModel.FK_Job_JobStatus" >
+          <ConnectorPoint PointX="6.875" PointY="5.2785953776041659" />
+          <ConnectorPoint PointX="7.625" PointY="5.2785953776041659" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

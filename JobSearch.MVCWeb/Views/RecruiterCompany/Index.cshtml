@@ -1,0 +1,55 @@
+﻿@model IEnumerable<JobSearch.MVCWeb.Models.RecruiterCompanyResult>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div>
+    @using (Html.BeginForm("Sort", "RecruiterCompany"))
+    {
+
+        @Html.RadioButton("SortBy", "ClientCompany", true)
+        ;
+        <span>Sort By Client Company</span>
+        <br />
+        @Html.RadioButton("SortBy", "RecruiterCompany", false)
+        ;
+        <span>Sort By Recruiter Company</span>
+        <br />
+
+        <input type="submit" value="Sort" />
+    }
+</div>
+<table>
+    <tr>
+        <th>
+            Client Company
+        </th>
+        <th>Recruiter</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientCompanyID) &nbsp; - &nbsp; 
+            @Html.DisplayFor(modelItem => item.ClientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruiterCompanyID) &nbsp; - &nbsp; 
+            @Html.DisplayFor(modelItem => item.RecruiterName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RecruiterCompanyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RecruiterCompanyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RecruiterCompanyID })
+        </td>
+    </tr>
+}
+
+</table>

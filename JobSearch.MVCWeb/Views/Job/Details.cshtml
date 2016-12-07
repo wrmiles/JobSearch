@@ -1,0 +1,35 @@
+﻿@model JobSearch.MVCWeb.Models.Job
+
+@{
+    ViewBag.Title = "Job Details";
+}
+
+<h2>Job Details</h2>
+
+<fieldset>
+    <legend>Job</legend>
+
+    <div class="display-label">JobTitle</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobTitle)
+    </div>
+
+    <div class="display-label">JobDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobDescription)
+    </div>
+
+    <div class="display-label">Company</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Company.CompanyName)
+    </div>
+
+    <div class="display-label">JobStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobStatus.JobStatusDescription)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.JobId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

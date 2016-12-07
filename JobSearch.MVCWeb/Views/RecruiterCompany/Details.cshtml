@@ -1,0 +1,20 @@
+﻿@model JobSearch.MVCWeb.Models.RecruiterCompany
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RecruiterCompany</legend>
+
+    <div class="display-label">ClientCompanyID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientCompanyID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.RecruiterCompanyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

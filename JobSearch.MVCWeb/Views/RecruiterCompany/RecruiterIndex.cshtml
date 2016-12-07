@@ -1,0 +1,26 @@
+﻿@model IEnumerable<JobSearch.MVCWeb.Models.RecruiterCompanyResult>
+
+@{
+    ViewBag.Title = "Associated Client Company(s)";
+}
+
+<fieldset>
+        <legend>Recruiters for client:  @Model.First().ClientName</legend>
+
+    <div>
+    
+        <br />
+      <table>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecruiterCompanyID) &nbsp; - &nbsp; 
+                @Html.DisplayFor(modelItem => item.RecruiterName)
+                @Html.ActionLink("Details", "Details", "Company", new { id=item.ClientCompanyID }, null)
+            </td>
+        </tr>
+        }
+
+        </table>
+    </div>
+</fieldset>

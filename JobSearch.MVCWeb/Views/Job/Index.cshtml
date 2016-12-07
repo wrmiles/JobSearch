@@ -1,0 +1,51 @@
+﻿@model IEnumerable<JobSearch.MVCWeb.Models.Job>
+
+@{
+    ViewBag.Title = "Job Index";
+}
+
+<h2>Job Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            JobTitle
+        </th>
+        <th>
+            JobDescription
+        </th>
+        <th>
+            Company
+        </th>
+        <th>
+            JobStatus
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobStatus.JobStatusDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JobId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JobId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JobId })
+        </td>
+    </tr>
+}
+
+</table>

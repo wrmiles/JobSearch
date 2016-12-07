@@ -1,0 +1,139 @@
+﻿@model IEnumerable<JobSearch.MVCWeb.Models.Company>
+
+@{
+    ViewBag.Title = "Company Index";
+}
+
+<h2>Company Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    @using (Html.BeginForm("FilterByIndustry", "Company"))
+    {
+         <fieldset>
+            <legend>Filter by Industry:</legend>
+             @Html.DropDownList("IndustryId", String.Empty)
+            <p>
+                <input type="submit" value="Filter" />
+            </p>
+         </fieldset>
+     }
+
+    
+</div>
+<div style="width: 99%; height: 340px; overflow: auto;">
+    <table style="font-size: 10px;">
+        <tr>
+            <th>
+                Company
+            </th>
+            <th>
+                Industry
+            </th>
+           @* <th>
+                Address
+            </th>*@
+            <th>
+                City
+            </th>
+            <th>
+                State
+            </th>
+            @*<th>
+                Zip
+            </th>*@
+            <th>
+                Contact
+            </th>
+            <th>
+                Title
+            </th>
+            @*<th>
+                Office Phone
+            </th>
+            <th>
+                MobilePhone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Website Url
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Driving Directions
+            </th>
+            <th>
+                Active
+            </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Industry.IndustryName)
+                </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.CompanyAddress)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyState)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.CompanyZip)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyContact1Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyContact1Title)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.CompanyContact1OfficePhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyContact1MobilePhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyContact1Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyWebsiteUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrivingDirections)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>*@
+                <td style="width: 130px;">
+                    @Html.ActionLink("Edit", "Edit", new { id=item.CompanyId }) &nbsp;|&nbsp;
+                    @Html.ActionLink("Details", "Details", new { id=item.CompanyId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style type="text/css">
+	td {
+		text-align: left;
+		vertical-align: top;	
+	}
+</style>

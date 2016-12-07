@@ -1,0 +1,91 @@
+﻿@model JobSearch.MVCWeb.Models.InterviewLog
+
+@{
+    ViewBag.Title = "Create Interview Item";
+}
+
+<h2>Create Interview Item</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>InterviewLog</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.InterviewId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InterviewId)
+            @Html.ValidationMessageFor(model => model.InterviewId)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientCompanyId)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.ClientCompanyId)*@
+            @Html.DropDownList("ddlActiveClientCompanies", "--SELECT--")
+            @Html.ValidationMessageFor(model => model.ClientCompanyId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RecruiterCompanyId)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.RecruiterCompanyId)*@
+             @Html.DropDownList("ddlActiveRecruiterCompanies", "--SELECT--")
+            @Html.ValidationMessageFor(model => model.RecruiterCompanyId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JobId, "Job")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("JobId", String.Empty)
+            @Html.ValidationMessageFor(model => model.JobId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InterviewStatusId, "InterviewStatus")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("InterviewStatusId", String.Empty)
+            @Html.ValidationMessageFor(model => model.InterviewStatusId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InterviewDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InterviewDate)
+            @Html.ValidationMessageFor(model => model.InterviewDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InterviewTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InterviewTime)
+            @Html.ValidationMessageFor(model => model.InterviewTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Notes, new { @rows = 8, @cols = 120 })
+            @Html.ValidationMessageFor(model => model.Notes)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

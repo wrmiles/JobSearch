@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:CompanyMetaData.cs" caret="1879" fromTop="69" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:JobSearchViewModel.cs" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:RecruiterIndex.cshtml" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:ClientIndex.cshtml" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Shared/f:_Layout.cshtml" caret="957" fromTop="22" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Delete.cshtml" caret="127" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:JobController.cs" caret="2629" fromTop="84" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Edit.cshtml" caret="92" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Details.cshtml" caret="91" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Index.cshtml" caret="102" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Create.cshtml" caret="96" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Delete.cshtml" caret="96" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:RecruiterCompanyResult.cs" caret="379" fromTop="12" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:InterviewLog.cs" caret="974" fromTop="23" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:InterviewLogMetaData.cs" caret="939" fromTop="30" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:Create.cshtml" caret="1095" fromTop="32" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:RecruiterCompanyController.cs" caret="1825" fromTop="22" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:InterviewLogResult.cs" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Classes/f:CompanyType.cs" caret="2073" fromTop="35" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Create.cshtml" caret="9756" fromTop="11" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Create.cshtml" caret="2938" fromTop="21" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Details.cshtml" caret="0" fromTop="0" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Details.cshtml" caret="1519" fromTop="22" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:CompanyController.cs" caret="3444" fromTop="16" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Index.cshtml" caret="1698" fromTop="18" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Index.cshtml" caret="3705" fromTop="17" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Edit.cshtml" caret="624" fromTop="19" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:InterviewLogController.cs" caret="4915" fromTop="17" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Content/f:Site.css" caret="3339" fromTop="0" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:Create.cshtml" caret="771" fromTop="23" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:HtmlHelpers/f:HTMLHelpes.cshtml" caret="85" fromTop="1" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/f:Web.config" caret="1133" fromTop="9" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:Index.cshtml" caret="1020" fromTop="25" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:ClientIndex.cshtml" caret="642" fromTop="18" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:RecruiterCompany/f:RecruiterIndex.cshtml" caret="602" fromTop="18" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Edit.cshtml" caret="9780" fromTop="23" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Details.cshtml" caret="4370" fromTop="28" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:CompanyMetaData.cs" caret="1879" fromTop="36" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Create.cshtml" caret="10232" fromTop="24" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Shared/f:_Layout.cshtml" caret="957" fromTop="22" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Delete.cshtml" caret="127" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:JobController.cs" caret="2629" fromTop="30" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:RecruiterCompanyController.cs" caret="1608" fromTop="11" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Classes/f:CompanyType.cs" caret="4946" fromTop="34" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Create.cshtml" caret="96" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Delete.cshtml" caret="96" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Details.cshtml" caret="91" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Edit.cshtml" caret="92" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Job/f:Index.cshtml" caret="102" fromTop="6" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:InterviewLogResult.cs" caret="525" fromTop="15" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Models/f:InterviewLogMetaData.cs" caret="939" fromTop="30" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Create.cshtml" caret="2853" fromTop="20" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Details.cshtml" caret="1519" fromTop="22" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Index.cshtml" caret="1698" fromTop="18" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:CompanyController.cs" caret="3444" fromTop="16" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:Company/f:Index.cshtml" caret="3705" fromTop="17" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Content/f:Site.css" caret="3555" fromTop="7" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Controllers/f:InterviewLogController.cs" caret="1076" fromTop="17" />
+    <File id="CF3FB7ED-C3A5-4217-A60B-4437F9BA0AB2/d:Views/d:InterviewLog/f:Edit.cshtml" caret="624" fromTop="19" />
+  </RecentEdits>
+</RecentFiles>

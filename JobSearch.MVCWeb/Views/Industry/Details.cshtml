@@ -1,0 +1,18 @@
+﻿@model JobSearch.MVCWeb.Models.Industry
+
+@{
+    ViewBag.Title = "Industry Details";
+}
+
+<fieldset>
+    <legend>Industry Details</legend>
+
+    <div class="display-label">IndustryName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndustryName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IndustryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

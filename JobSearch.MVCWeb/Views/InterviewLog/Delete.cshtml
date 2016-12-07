@@ -1,0 +1,58 @@
+﻿@model JobSearch.MVCWeb.Models.InterviewLog
+
+@{
+    ViewBag.Title = "Delete Interview Item";
+}
+
+<h2>Delete Interview Item</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>InterviewLog</legend>
+
+    <div class="display-label">InterviewId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InterviewId)
+    </div>
+
+    <div class="display-label">ClientCompanyId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientCompanyId)
+    </div>
+
+    <div class="display-label">RecruiterCompanyId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecruiterCompanyId)
+    </div>
+
+    <div class="display-label">Job</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Job.JobTitle)
+    </div>
+
+    <div class="display-label">InterviewStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InterviewStatus.InterviewStatusDescription)
+    </div>
+
+    <div class="display-label">InterviewDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InterviewDate)
+    </div>
+
+    <div class="display-label">InterviewTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InterviewTime)
+    </div>
+
+    <div class="display-label">Notes</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
